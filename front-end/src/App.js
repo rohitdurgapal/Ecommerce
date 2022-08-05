@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import ProtectedRoutes from './components/ProtectedRoutes';
-
+import Login from './components/Login';
 function App() {
   return (
     <div className="App">
@@ -23,6 +23,7 @@ function App() {
             <Route exact path="/profile" element={<h1>Profile</h1>} />
           </Route>
           <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div >

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
-    const [name, setName] = useState("");
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -12,28 +11,30 @@ const SignUp = () => {
             navigate('/');
         }
     })
-
-    const collectData = async () => {
-        console.log(name, email, password)
-        let result = await fetch("http://localhost:5000/register", {
+    const handleLogin = async () => {
+        console.log(email, password)
+        let result = await fetch("http://localhost:5000/login", {
             method: "post",
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ email, password }),
             headers: {
                 "content-type": "application/json"
             },
         });
         result = await result.json();
         console.warn(result);
-        localStorage.setItem("user", JSON.stringify(result));
-        navigate('/');
+        if (result.name) {
+            localStorage.setItem("user", JSON.stringify(result));
+            navigate('/');
+        } else {
+            alert("Please enter the valid credentials")
+        }
+
+
     }
 
     return (
         <div className='form-block'>
-            <h1>Sign Up</h1>
-            <div className='form-block'>
-                <input type="text" placeholder='Enter Name' value={name} onChange={(e) => setName(e.target.value)} />
-            </div>
+            <h1>Login</h1>
             <div className='form-block'>
                 <input type="text" placeholder='Enter Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
@@ -41,10 +42,10 @@ const SignUp = () => {
                 <input type="password" placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
             <div className='form-block'>
-                <button type="button" onClick={collectData}>Sign Up</button>
+                <button type="button" onClick={handleLogin}>Login</button>
             </div>
         </div>
     )
 }
 
-export default SignUp
+export default Login
