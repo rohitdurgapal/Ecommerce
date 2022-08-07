@@ -1,6 +1,9 @@
 import './App.css';
 import Nav from './components/Nav';
 import SignUp from './components/SignUp';
+import AddProduct from './components/AddProduct';
+import ProductList from './components/ProductList';
+import UpdateProduct from './components/UpdateProduct';
 import {
   BrowserRouter,
   Routes,
@@ -16,9 +19,9 @@ function App() {
         <Nav />
         <Routes>
           <Route element={<ProtectedRoutes />}>
-            <Route exact path="/" element={<h1>Product</h1>} />
-            <Route exact path="/add" element={<h1>Add Product</h1>} />
-            <Route exact path="/update" element={<h1>Update Product</h1>} />
+            <Route exact path="/" element={<ProductList />} />
+            <Route exact path="/add" element={<AddProduct />} />
+            <Route exact path="/update/:id" element={<UpdateProduct />} />
             <Route exact path="/logout" element={<h1>Logout</h1>} />
             <Route exact path="/profile" element={<h1>Profile</h1>} />
           </Route>

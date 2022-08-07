@@ -1,34 +1,46 @@
-body{
+html {
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
-}
-.header-style {
+ }
+body {
+  margin: 0px;
+  padding: 0px;
+ }
+.nav-class{
   width: 100%;
   background-color: #2196f3;
 }
-.header-style li{
+.nav-menu{
+  width: 100%;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.header-style li {
   display: inline-block;
   list-style: none;
   padding: 20px;
 }
-.header-style li a{
-  color:#fff;
+
+.header-style li a {
+  color: #fff;
   text-decoration: none;
 }
-.header-style li a:hover{
+
+.header-style li a:hover {
   text-decoration: underline;
 }
-.form-block{
+
+.form-block {
   width: 400px;
   margin: 3% auto;
   text-align: center;
 }
-.form-block h1{
-  text-align: center;
-}
-.form-block{
 
+.form-block h1 {
+  text-align: center;
 }
 .form-block input {
   width: 100%;
@@ -36,6 +48,7 @@ body{
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .form-block button {
   width: 30%;
   margin: auto;
@@ -44,4 +57,74 @@ body{
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #fff;
+}
+
+.nav-right {
+  text-align: right;
+  margin: 0px;
+}
+
+.logo {
+  font-size: 25px;
+  float: left;
+  font-family: fantasy;
+  margin: 15px 0px 0px 10px;
+  color: #ff9800;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: white;
+}
+
+.error-message {
+  text-align: left;
+  width: 100%;
+  display: block;
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.product-list {
+  width: 80%;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.product-list table thead tr td {
+  color: #fff;
+  background-color: #2196f3;
+}
+
+.product-list table tbody tr td {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #ccc;
+}
+
+.btn-class {
+  background-color: #2196f3;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-class-delete {
+  background-color: #f44336;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 5px;
+}
+
+.product-input {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
 }
